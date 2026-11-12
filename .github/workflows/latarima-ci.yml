@@ -1,0 +1,143 @@
+name: La Tarima - CI, SonarQube y OWASP
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: la-tarima-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: 01 - Validar y compilar
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: |
+            la-tarima-back/package-lock.json
+            la-tarima-front/package-lock.json
+
+      - name: Instalar dependencias backend
+        run: npm ci --prefix la-tarima-back
+
+      - name: Instalar dependencias frontend
+        run: npm ci --prefix la-tarima-front
+
+      - name: Comprobar sintaxis backend
+        shell: bash
+        run: |
+          set -euo pipefail
+          find la-tarima-back -path '*/node_modules' -prune -o -type f -name '*.js' -print0 \
+            | xargs -0 -r -n1 node --check
+
+      - name: Ejecutar ESLint frontend
+        run: npm run lint --prefix la-tarima-front
+
+      - name: Compilar frontend React/Vite
+        run: npm run build --prefix la-tarima-front
+
+      - name: Auditar dependencias (diagnostico no bloqueante)
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p evidencias/npm-audit
+          npm audit --prefix la-tarima-back --omit=dev --json > evidencias/npm-audit/backend.json || true
+          npm audit --prefix la-tarima-front --omit=dev --json > evidencias/npm-audit/frontend.json || true
+          echo 'Los reportes npm audit deben revisarse; este paso no los declara aprobados.'
+
+      - name: Publicar evidencias npm audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: la-tarima-dependencias-${{ github.run_id }}
+          path: evidencias/npm-audit/
+          if-no-files-found: warn
+          retention-days: 30
+
+  sonar:
+    name: 02A - SonarQube en Ubuntu local
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: [self-hosted, Linux, X64, latarima-sonar]
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Analizar codigo y esperar Quality Gate
+        shell: bash
+        env:
+          SONAR_HOST_URL: http://127.0.0.1:9000
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: bash scripts/ci/sonar-local.sh
+
+      - name: Publicar evidencias SonarQube
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: la-tarima-sonarqube-${{ github.run_id }}
+          path: evidencias/sonarqube/
+          if-no-files-found: warn
+          retention-days: 30
+
+  zap:
+    name: 02B - OWASP ZAP en GitHub
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    services:
+      mongodb:
+        image: mongo:7
+        ports:
+          - 27028:27017
+        options: >-
+          --health-cmd "mongosh --quiet --eval 'db.adminCommand({ping:1})'"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: |
+            la-tarima-back/package-lock.json
+            la-tarima-front/package-lock.json
+
+      - name: Instalar dependencias
+        run: |
+          npm ci --prefix la-tarima-back
+          npm ci --prefix la-tarima-front
+
+      - name: Levantar entorno temporal y ejecutar ZAP Baseline
+        shell: bash
+        run: bash scripts/ci/zap-baseline.sh
+
+      - name: Publicar reporte OWASP (HTML, JSON, Markdown)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: la-tarima-owasp-zap-${{ github.run_id }}
+          path: evidencias/zap/
+          if-no-files-found: warn
+          retention-days: 30
