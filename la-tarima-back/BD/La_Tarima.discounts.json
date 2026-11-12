@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "6a095b0476631bff76b7ea73"
+  },
+  "discount_id": "DISC_0001",
+  "name": "PROMO01",
+  "kind": "coupon",
+  "code": "LATARIMAPROMO",
+  "type": "percentage",
+  "value": 10,
+  "validFrom": {
+    "$date": "2026-05-17T00:00:00.000Z"
+  },
+  "validUntil": {
+    "$date": "2026-05-31T00:00:00.000Z"
+  },
+  "usedCount": 0,
+  "active": true,
+  "stackable": false,
+  "appliedReservations": [],
+  "createdAt": {
+    "$date": "2026-05-17T06:07:00.076Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T06:07:00.076Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a095b2a76631bff76b7ea78"
+  },
+  "discount_id": "DISC_0002",
+  "name": "PROMOLIMIT",
+  "kind": "coupon",
+  "code": "PROMOX10",
+  "type": "percentage",
+  "value": 10,
+  "validFrom": {
+    "$date": "2026-05-17T00:00:00.000Z"
+  },
+  "validUntil": {
+    "$date": "2027-05-17T00:00:00.000Z"
+  },
+  "maxUses": 10,
+  "usedCount": 0,
+  "active": true,
+  "stackable": false,
+  "appliedReservations": [],
+  "createdAt": {
+    "$date": "2026-05-17T06:07:38.382Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T06:07:38.382Z"
+  },
+  "__v": 0
+}]

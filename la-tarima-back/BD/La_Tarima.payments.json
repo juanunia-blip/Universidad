@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "6a0ce3d6c50881d8a48422aa"
+  },
+  "payment_id": "PAY_0001",
+  "reservation_id": "RES_0001",
+  "order_id": "ORD_0001",
+  "scope": "order",
+  "amount": 109000,
+  "method": "efectivo",
+  "tip": 0,
+  "status": "aprobado",
+  "createdAt": {
+    "$date": "2026-05-19T22:27:34.014Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T22:28:20.488Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a14fb7a7853694569dca0bd"
+  },
+  "payment_id": "PAY_0002",
+  "reservation_id": "RES_0006",
+  "order_id": "ORD_0002",
+  "scope": "order",
+  "amount": 31000,
+  "method": "efectivo",
+  "tip": 0,
+  "status": "pendiente",
+  "createdAt": {
+    "$date": "2026-05-26T01:46:34.553Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-26T01:46:34.553Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a14fb967853694569dca115"
+  },
+  "payment_id": "PAY_0003",
+  "reservation_id": "RES_0006",
+  "order_id": "ORD_0003",
+  "scope": "order",
+  "amount": 20000,
+  "method": "efectivo",
+  "tip": 0,
+  "status": "aprobado",
+  "createdAt": {
+    "$date": "2026-05-26T01:47:02.194Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-26T01:52:02.431Z"
+  },
+  "__v": 0
+}]

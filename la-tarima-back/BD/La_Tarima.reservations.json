@@ -1,0 +1,149 @@
+[{
+  "_id": {
+    "$oid": "6a0ce361c50881d8a48421c4"
+  },
+  "reservation_id": "RES_0001",
+  "table_id": "TBL_0001",
+  "date": "2026-05-20",
+  "startTime": "17:24",
+  "endTime": "20:24",
+  "peopleCount": 4,
+  "status": "en_curso",
+  "channel": "presencial",
+  "clientRef": {
+    "fullname": "Juan Felipe Garcia",
+    "docID": "12334565343"
+  },
+  "appliedCoupons": [],
+  "createdAt": {
+    "$date": "2026-05-19T22:25:37.711Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T22:27:24.962Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a14f25b87da019674749a6c"
+  },
+  "reservation_id": "RES_0002",
+  "table_id": "TBL_0001",
+  "date": "2026-05-25",
+  "startTime": "20:09",
+  "endTime": "23:07",
+  "peopleCount": 1,
+  "status": "pendiente",
+  "channel": "presencial",
+  "clientRef": {
+    "fullname": "Diego Bermudez",
+    "docID": "10863987672"
+  },
+  "appliedCoupons": [],
+  "createdAt": {
+    "$date": "2026-05-26T01:07:39.192Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-26T01:07:39.192Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a14f28b7853694569dc9e10"
+  },
+  "reservation_id": "RES_0003",
+  "table_id": "TBL_0002",
+  "date": "2026-05-25",
+  "startTime": "20:09",
+  "endTime": "23:08",
+  "peopleCount": 1,
+  "status": "pendiente",
+  "channel": "presencial",
+  "clientRef": {
+    "fullname": "Diego Bermudez",
+    "docID": "10863987672"
+  },
+  "appliedCoupons": [],
+  "createdAt": {
+    "$date": "2026-05-26T01:08:27.560Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-26T01:08:27.560Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a14f2a87853694569dc9e24"
+  },
+  "reservation_id": "RES_0004",
+  "table_id": "TBL_0006",
+  "date": "2026-05-25",
+  "startTime": "20:00",
+  "endTime": "23:08",
+  "peopleCount": 1,
+  "status": "pendiente",
+  "channel": "presencial",
+  "clientRef": {
+    "fullname": "Diego Bermudez",
+    "docID": "10863987672"
+  },
+  "appliedCoupons": [],
+  "createdAt": {
+    "$date": "2026-05-26T01:08:56.964Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-26T01:08:56.964Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a14f2d57853694569dc9e38"
+  },
+  "reservation_id": "RES_0005",
+  "table_id": "TBL_0007",
+  "date": "2026-05-25",
+  "startTime": "15:09",
+  "endTime": "23:09",
+  "peopleCount": 1,
+  "status": "confirmada",
+  "channel": "presencial",
+  "clientRef": {
+    "fullname": "Juan Felipe Garcia",
+    "docID": "12334565343"
+  },
+  "appliedCoupons": [],
+  "createdAt": {
+    "$date": "2026-05-26T01:09:41.202Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-26T01:11:00.554Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a14faae7853694569dca003"
+  },
+  "reservation_id": "RES_0006",
+  "table_id": "TBL_0002",
+  "date": "2026-05-29",
+  "startTime": "10:00",
+  "endTime": "16:00",
+  "peopleCount": 1,
+  "status": "en_curso",
+  "channel": "presencial",
+  "guest": {
+    "fullname": "Diego"
+  },
+  "appliedCoupons": [],
+  "createdAt": {
+    "$date": "2026-05-26T01:43:10.435Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-26T01:45:58.248Z"
+  },
+  "__v": 0
+}]

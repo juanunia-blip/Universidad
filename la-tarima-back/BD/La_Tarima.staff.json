@@ -1,0 +1,111 @@
+[{
+  "_id": {
+    "$oid": "6a09599b76631bff76b7ea5b"
+  },
+  "user_id": "USR_0001",
+  "fullname": "Sergio García",
+  "role": "manager",
+  "cellPhone": "3001238976",
+  "email": "gerencia@latarima.com",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-17T06:00:59.459Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T06:00:59.459Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a095a3b76631bff76b7ea60"
+  },
+  "user_id": "USR_0002",
+  "fullname": "Andres Gutierrez",
+  "role": "chef",
+  "cellPhone": "3214567823",
+  "email": "andres.g@gmail.com",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-17T06:03:39.076Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T06:03:39.076Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a095a5f76631bff76b7ea65"
+  },
+  "user_id": "USR_0003",
+  "fullname": "Camila Burbano",
+  "role": "waiter",
+  "cellPhone": "3218974565",
+  "email": "camila.b@gmail.com",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-17T06:04:15.695Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T06:04:15.695Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a095a8b76631bff76b7ea6a"
+  },
+  "user_id": "USR_0004",
+  "fullname": "Ana Hurtad",
+  "role": "waiter",
+  "cellPhone": "3128973343",
+  "email": "ana.hurtado@gmail.com",
+  "active": false,
+  "createdAt": {
+    "$date": "2026-05-17T06:04:59.011Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-26T01:39:26.947Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a14f9107853694569dc9f64"
+  },
+  "user_id": "USR_0012",
+  "fullname": "Juan Felipe",
+  "role": "manager",
+  "email": "juan.garcia.vega@uniautonoma.edu.co",
+  "passwordHash": "61addc72185983041c133138f74704ba70fc1ec681f64ca695f5dbbe33a32fb3d8ba59e9e8f89719a55d32189885abef0662b084eafe990e059442cefecc319a",
+  "passwordSalt": "cd4d19f564b4170f99629b4e4ec879c2",
+  "verified": true,
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-26T01:36:16.724Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-26T01:36:40.140Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a14f9a47853694569dc9fd3"
+  },
+  "user_id": "USR_0013",
+  "fullname": "camilo",
+  "role": "waiter",
+  "cellPhone": "321567713245",
+  "email": "ejemplo@latarima.com",
+  "verified": false,
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-26T01:38:44.002Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-26T01:38:44.002Z"
+  },
+  "__v": 0
+}]

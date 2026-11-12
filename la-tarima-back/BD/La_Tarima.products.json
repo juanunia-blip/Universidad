@@ -1,0 +1,160 @@
+[{
+  "_id": {
+    "$oid": "69fedece70668ea5a7af3528"
+  },
+  "product_id": "PROD_0001",
+  "name": "Papas fritas",
+  "category": "comida",
+  "subcategory": "entradas",
+  "basePrice": 14000,
+  "description": "Papas fritas con sal, pimienta y salsa de la casa",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-09T07:14:22.114Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-09T07:41:59.701Z"
+  },
+  "__v": 0,
+  "imageUrl": "/uploads/products/product-1778312519687-560743696.jpg"
+},
+{
+  "_id": {
+    "$oid": "69fee78770668ea5a7af3593"
+  },
+  "product_id": "PROD_0002",
+  "name": "Hamburguesa de carnes",
+  "category": "comida",
+  "subcategory": "platos_fuertes",
+  "basePrice": 25000,
+  "description": "Hamburguesa super rica",
+  "imageUrl": "/uploads/products/product-1778313095297-702562282.png",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-09T07:51:35.414Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-09T07:51:35.414Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69fee8a070668ea5a7af3598"
+  },
+  "product_id": "PROD_0003",
+  "name": "Budweiser clásica",
+  "category": "bebida",
+  "subcategory": "cerveza",
+  "basePrice": 6000,
+  "description": "Bien fría, en vaso, en lata, como prefieras!",
+  "imageUrl": "/uploads/products/product-1778313376940-523264256.jpg",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-09T07:56:16.961Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-09T21:20:46.282Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69feea2470668ea5a7af35c1"
+  },
+  "product_id": "PROD_0004",
+  "name": "Poker en lata tradicional",
+  "category": "bebida",
+  "subcategory": "cerveza",
+  "basePrice": 4000,
+  "description": "Bien fría, 330ml de frescura clásica",
+  "imageUrl": "/uploads/products/product-1778313764885-178340209.webp",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-09T08:02:44.905Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-09T08:02:44.905Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69feebe470668ea5a7af35c6"
+  },
+  "product_id": "PROD_0005",
+  "name": "Poker en lata grande",
+  "category": "bebida",
+  "subcategory": "cerveza",
+  "basePrice": 6000,
+  "description": "En compañía se disfruta mejor 473ml para compartir",
+  "imageUrl": "/uploads/products/product-1778314212850-22704921.webp",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-09T08:10:12.870Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-09T08:10:12.870Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69feecae70668ea5a7af35df"
+  },
+  "product_id": "PROD_0006",
+  "name": "Sandwich cubano con carnes y pollo",
+  "category": "comida",
+  "subcategory": "especialidades",
+  "basePrice": 30000,
+  "description": "Delicioso sandwich de 30cm con salsa de la casa",
+  "imageUrl": "/uploads/products/product-1778314414867-793641673.webp",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-09T08:13:34.889Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-09T08:13:34.889Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69ffa56f1f128717bd5d3c81"
+  },
+  "product_id": "PROD_0007",
+  "name": "Coca Cola",
+  "category": "bebida",
+  "subcategory": "otro",
+  "basePrice": 4000,
+  "description": "Bien fria",
+  "imageUrl": "/uploads/products/product-1778361711787-566160308.jpg",
+  "active": false,
+  "createdAt": {
+    "$date": "2026-05-09T21:21:51.849Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-09T21:22:01.100Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a027cdc1a1b8a1262683836"
+  },
+  "product_id": "PROD_0008",
+  "name": "fghhf",
+  "category": "bebida",
+  "subcategory": "coctel",
+  "basePrice": 1000,
+  "description": "bfb",
+  "imageUrl": "/uploads/products/product-1778547932096-747415234.webp",
+  "active": false,
+  "createdAt": {
+    "$date": "2026-05-12T01:05:32.126Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-12T01:05:56.119Z"
+  },
+  "__v": 0
+}]

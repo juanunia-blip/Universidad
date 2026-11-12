@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "6a095bcc76631bff76b7ea94"
+  },
+  "fullname": "Juan Felipe Garcia",
+  "phone": "3214568978",
+  "address": "calle 12 34#45 Norte",
+  "docID": "12334565343",
+  "email": "felipegarcia@gmail.com",
+  "notes": "Prefiere el segundo piso",
+  "createdAt": {
+    "$date": "2026-05-17T06:10:20.691Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T06:10:20.691Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a095c1076631bff76b7ea98"
+  },
+  "fullname": "Jorge Campo",
+  "phone": "3215787978",
+  "address": "calle 9 34#23 norte",
+  "docID": "14539878273",
+  "email": "jorge.c@gmail.com",
+  "notes": "Prefiere cerveza michelada",
+  "createdAt": {
+    "$date": "2026-05-17T06:11:28.848Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T06:11:28.848Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a095c5476631bff76b7ea9c"
+  },
+  "fullname": "Diego Bermudez",
+  "phone": "3001234343",
+  "address": "Calle 21 23#23-10 norte",
+  "docID": "10863987672",
+  "email": "diego.b@gmail.com",
+  "notes": "Le gusta en el balcón",
+  "createdAt": {
+    "$date": "2026-05-17T06:12:36.249Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T06:12:36.249Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a095cbf76631bff76b7eab8"
+  },
+  "fullname": "Juan Pablo Gutierrez",
+  "phone": "3002435671",
+  "address": "calle 9#12-6 sur",
+  "docID": "10439876543",
+  "email": "juan.p.g@gmail.com",
+  "notes": "Pide siempre papas fritas",
+  "createdAt": {
+    "$date": "2026-05-17T06:14:23.458Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T06:14:23.458Z"
+  },
+  "__v": 0
+}]

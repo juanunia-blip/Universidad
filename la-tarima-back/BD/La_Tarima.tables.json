@@ -1,0 +1,180 @@
+[{
+  "_id": {
+    "$oid": "6a094f65cb5eed00f1b672d5"
+  },
+  "table_id": "TBL_0001",
+  "tableNumber": 1,
+  "capacity": 4,
+  "zone": "Balcón a la calle",
+  "currentStatus": "reservada",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-17T05:17:25.528Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T22:26:50.504Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a094f89cb5eed00f1b672da"
+  },
+  "table_id": "TBL_0002",
+  "tableNumber": 2,
+  "capacity": 4,
+  "zone": "Balcón a la calle",
+  "currentStatus": "reservada",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-17T05:18:01.123Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-26T01:43:44.006Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a094f95cb5eed00f1b672df"
+  },
+  "table_id": "TBL_0003",
+  "tableNumber": 3,
+  "capacity": 4,
+  "zone": "Barra",
+  "currentStatus": "libre",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-17T05:18:13.809Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T05:18:13.809Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a094fb2cb5eed00f1b672e4"
+  },
+  "table_id": "TBL_0004",
+  "tableNumber": 4,
+  "capacity": 4,
+  "zone": "Barra",
+  "currentStatus": "libre",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-17T05:18:42.611Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T05:18:42.611Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a094fc1cb5eed00f1b672e9"
+  },
+  "table_id": "TBL_0005",
+  "tableNumber": 5,
+  "capacity": 4,
+  "zone": "Barra",
+  "currentStatus": "libre",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-17T05:18:57.071Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T05:18:57.071Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a094fddcb5eed00f1b672ee"
+  },
+  "table_id": "TBL_0006",
+  "tableNumber": 6,
+  "capacity": 4,
+  "zone": "Frente a la barra",
+  "currentStatus": "libre",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-17T05:19:25.183Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T05:19:25.183Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a095000cb5eed00f1b672f3"
+  },
+  "table_id": "TBL_0007",
+  "tableNumber": 7,
+  "capacity": 4,
+  "zone": "Al lado de las escaleras",
+  "currentStatus": "reservada",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-17T05:20:00.823Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-26T01:11:00.562Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a09503fcb5eed00f1b672f8"
+  },
+  "table_id": "TBL_0008",
+  "tableNumber": 8,
+  "capacity": 4,
+  "zone": "Al costado izquierdo de la tarima",
+  "currentStatus": "libre",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-17T05:21:03.789Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T05:21:33.153Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a0950abcb5eed00f1b67300"
+  },
+  "table_id": "TBL_0009",
+  "tableNumber": 9,
+  "capacity": 4,
+  "zone": "Frente a la tarima",
+  "currentStatus": "libre",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-17T05:22:51.350Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T05:22:51.350Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a09517bcb5eed00f1b67305"
+  },
+  "table_id": "TBL_0010",
+  "tableNumber": 10,
+  "capacity": 6,
+  "zone": "frente a la tarima",
+  "currentStatus": "libre",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-17T05:26:19.157Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-17T05:26:19.157Z"
+  },
+  "__v": 0
+}]

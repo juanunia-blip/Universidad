@@ -1,0 +1,30 @@
+[{
+  "_id": "table",
+  "__v": 0,
+  "seq": 12
+},
+{
+  "_id": "staff",
+  "__v": 0,
+  "seq": 13
+},
+{
+  "_id": "discount",
+  "__v": 0,
+  "seq": 2
+},
+{
+  "_id": "reservation",
+  "__v": 0,
+  "seq": 6
+},
+{
+  "_id": "order",
+  "__v": 0,
+  "seq": 3
+},
+{
+  "_id": "payment",
+  "__v": 0,
+  "seq": 3
+}]

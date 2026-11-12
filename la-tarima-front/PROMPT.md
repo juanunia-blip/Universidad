@@ -1,0 +1,4 @@
+1. necesito que crees una pagina para gestionar los cupones, que muestre el listado de cupones disponibles, que se puede "editar" "ver detalle" "eliminar" y "crear", quiero que cuando le des "crear" te de dos opciones, crear cupon por limite de usos o límite de tiempo, cuando cree un cupon por limite de usos, que te pida definir el limite de usos y el porcentaje a descontar, mientras que si es por limite de tiempo, que pida la fecha de inicio y fecha de finalizacion del cupon, también el porcentaje de descontar
+
+
+2. Estoy en reservaciones, estoy editando una reserva, apliqué un cupon que acabo de crear, pero al guardar cambios, no se guardan. En la pagina de cupones, el cupon no descuesta el uso, en la pagina de reservaciones tampoco se aplica el descuento al valor total de la reserva y tampoco se aplica el porcentaje de descuento a cada orden

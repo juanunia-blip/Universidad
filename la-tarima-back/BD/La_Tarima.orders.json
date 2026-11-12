@@ -1,0 +1,135 @@
+[{
+  "_id": {
+    "$oid": "6a0ce3ccc50881d8a484226e"
+  },
+  "order_id": "ORD_0001",
+  "reservation_id": "RES_0001",
+  "clientHint": "Juan Felipe Garcia",
+  "status": "enviado_cocina",
+  "items": [
+    {
+      "product_id": "PROD_0003",
+      "name": "Budweiser clásica",
+      "quantity": 1,
+      "unitPrice": 6000,
+      "_id": {
+        "$oid": "6a0ce3ccc50881d8a484226f"
+      }
+    },
+    {
+      "product_id": "PROD_0002",
+      "name": "Hamburguesa de carnes",
+      "quantity": 1,
+      "unitPrice": 25000,
+      "_id": {
+        "$oid": "6a0ce3ccc50881d8a4842270"
+      }
+    },
+    {
+      "product_id": "PROD_0006",
+      "name": "Sandwich cubano con carnes y pollo",
+      "quantity": 2,
+      "unitPrice": 30000,
+      "_id": {
+        "$oid": "6a0ce3ccc50881d8a4842271"
+      }
+    },
+    {
+      "product_id": "PROD_0005",
+      "name": "Poker en lata grande",
+      "quantity": 3,
+      "unitPrice": 6000,
+      "_id": {
+        "$oid": "6a0ce3ccc50881d8a4842272"
+      }
+    }
+  ],
+  "totalAmount": 109000,
+  "subtotalAmount": 109000,
+  "notes": "sin piña",
+  "createdAt": {
+    "$date": "2026-05-19T22:27:24.957Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T22:27:31.894Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a14fb567853694569dca086"
+  },
+  "order_id": "ORD_0002",
+  "reservation_id": "RES_0006",
+  "clientHint": "Diego",
+  "status": "enviado_cocina",
+  "items": [
+    {
+      "product_id": "PROD_0002",
+      "name": "Hamburguesa de carnes",
+      "quantity": 1,
+      "unitPrice": 25000,
+      "_id": {
+        "$oid": "6a14fb567853694569dca087"
+      }
+    },
+    {
+      "product_id": "PROD_0003",
+      "name": "Budweiser clásica",
+      "quantity": 1,
+      "unitPrice": 6000,
+      "_id": {
+        "$oid": "6a14fb567853694569dca088"
+      }
+    }
+  ],
+  "totalAmount": 31000,
+  "subtotalAmount": 31000,
+  "notes": "",
+  "createdAt": {
+    "$date": "2026-05-26T01:45:58.242Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-26T01:46:11.364Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a14fb907853694569dca0d9"
+  },
+  "order_id": "ORD_0003",
+  "reservation_id": "RES_0006",
+  "clientHint": "Diego",
+  "status": "enviado_cocina",
+  "items": [
+    {
+      "product_id": "PROD_0005",
+      "name": "Poker en lata grande",
+      "quantity": 1,
+      "unitPrice": 6000,
+      "_id": {
+        "$oid": "6a14fb907853694569dca0da"
+      }
+    },
+    {
+      "product_id": "PROD_0001",
+      "name": "Papas fritas",
+      "quantity": 1,
+      "unitPrice": 14000,
+      "_id": {
+        "$oid": "6a14fb907853694569dca0db"
+      }
+    }
+  ],
+  "totalAmount": 20000,
+  "subtotalAmount": 20000,
+  "notes": "",
+  "createdAt": {
+    "$date": "2026-05-26T01:46:56.537Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-26T01:47:00.692Z"
+  },
+  "__v": 0
+}]
