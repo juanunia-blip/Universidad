@@ -16,7 +16,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-
   # ==========================================
   # STAGE 01 - VALIDACION Y COMPILACION
   # ==========================================
@@ -48,24 +47,20 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-
           find la-tarima-back \
             -path '*/node_modules' -prune -o \
             -type f -name '*.js' -print0 \
             | xargs -0 -r -n1 node --check
 
-      # ======================================
-      # ESLINT - DIAGNOSTICO NO BLOQUEANTE
-      # ======================================
+      # ESLint queda registrado como diagnostico temporal.
+      # El build y el Quality Gate siguen siendo obligatorios.
       - name: Ejecutar ESLint frontend
         id: eslint
         continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
-
           mkdir -p evidencias/eslint
-
           npm run lint --prefix la-tarima-front \
             2>&1 | tee evidencias/eslint/frontend-eslint.log
 
@@ -75,17 +70,14 @@ jobs:
         env:
           ESLINT_RESULT: ${{ steps.eslint.outcome }}
         run: |
-          echo "## Analisis ESLint - La Tarima" >> "$GITHUB_STEP_SUMMARY"
-
-          if [ "$ESLINT_RESULT" = "failure" ]; then
-            echo "::warning::ESLint detecto errores pendientes."
-            echo "Resultado: ERRORES DETECTADOS" >> "$GITHUB_STEP_SUMMARY"
-            echo "" >> "$GITHUB_STEP_SUMMARY"
-            echo "Se permite continuar temporalmente para ejecutar SonarQube y OWASP ZAP." >> "$GITHUB_STEP_SUMMARY"
-          elif [ "$ESLINT_RESULT" = "success" ]; then
-            echo "Resultado: APROBADO" >> "$GITHUB_STEP_SUMMARY"
+          echo '## Analisis ESLint - La Tarima' >> "$GITHUB_STEP_SUMMARY"
+          if [ "$ESLINT_RESULT" = 'failure' ]; then
+            echo '::warning::ESLint detecto errores pendientes.'
+            echo 'Resultado: ERRORES DETECTADOS (no bloqueante temporalmente)' >> "$GITHUB_STEP_SUMMARY"
+          elif [ "$ESLINT_RESULT" = 'success' ]; then
+            echo 'Resultado: APROBADO' >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "Resultado: NO EJECUTADO" >> "$GITHUB_STEP_SUMMARY"
+            echo 'Resultado: NO EJECUTADO' >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - name: Publicar evidencia ESLint
@@ -97,36 +89,21 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
 
-      # ======================================
-      # BUILD FRONTEND - OBLIGATORIO
-      # ======================================
       - name: Compilar frontend React/Vite
         run: npm run build --prefix la-tarima-front
 
-      # ======================================
-      # AUDITORIA DE DEPENDENCIAS
-      # ======================================
-      - name: Auditar dependencias
+      - name: Auditar dependencias (diagnostico)
         if: always()
         shell: bash
         run: |
           mkdir -p evidencias/npm-audit
-
-          npm audit \
-            --prefix la-tarima-back \
-            --omit=dev \
-            --json \
+          npm audit --prefix la-tarima-back --omit=dev --json \
             > evidencias/npm-audit/backend.json || true
-
-          npm audit \
-            --prefix la-tarima-front \
-            --omit=dev \
-            --json \
+          npm audit --prefix la-tarima-front --omit=dev --json \
             > evidencias/npm-audit/frontend.json || true
-
-          echo "::warning::Revisar vulnerabilidades de dependencias."
-          echo "## Auditoria npm" >> "$GITHUB_STEP_SUMMARY"
-          echo "Los resultados requieren revision; esta auditoria es diagnostica." >> "$GITHUB_STEP_SUMMARY"
+          echo '::warning::Revisar vulnerabilidades de dependencias.'
+          echo '## Auditoria npm' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Revision pendiente: resultados disponibles en artifacts.' >> "$GITHUB_STEP_SUMMARY"
 
       - name: Publicar evidencias npm audit
         if: always()
@@ -138,57 +115,44 @@ jobs:
           retention-days: 30
 
   # ==========================================
-  # STAGE 02A - SONARQUBE LOCAL
+  # STAGE 02A - SONARQUBE UBUNTU LOCAL
   # ==========================================
   sonar:
     name: 02A - SonarQube en Ubuntu local
-
-    if: >-
-      github.event_name != 'pull_request' &&
-      github.ref == 'refs/heads/main'
-
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: validate
-
-    runs-on:
-      - self-hosted
-      - Linux
-      - X64
-      - latarima-sonar
-
+    runs-on: [self-hosted, Linux, X64, latarima-sonar]
     timeout-minutes: 30
 
     steps:
-      - name: Checkout
+      - name: Checkout completo para analisis SonarQube
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
-      - name: Verificar conectividad SonarQube
+      - name: Verificar Docker y SonarQube
         shell: bash
         run: |
           set -euo pipefail
-
-          echo "Verificando SonarQube local..."
-
-          curl --fail --silent --show-error \
-            --max-time 15 \
+          docker info >/dev/null
+          curl -fsS --max-time 15 \
             http://127.0.0.1:9000/api/system/status
+          echo
 
-          echo ""
-
-      - name: Analizar codigo y esperar Quality Gate
+      - name: Ejecutar SonarScanner y validar Quality Gate
         shell: bash
         env:
           SONAR_HOST_URL: http://127.0.0.1:9000
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           set -euo pipefail
-
           if [ -z "$SONAR_TOKEN" ]; then
-            echo "::error::Falta configurar SONAR_TOKEN."
+            echo '::error::Falta SONAR_TOKEN en Repository secrets.'
             exit 1
           fi
-
+          test -f sonar-project.properties
           test -f scripts/ci/sonar-local.sh
-
           bash scripts/ci/sonar-local.sh
 
       - name: Publicar evidencias SonarQube
@@ -201,17 +165,12 @@ jobs:
           retention-days: 30
 
   # ==========================================
-  # STAGE 02B - OWASP ZAP
+  # STAGE 02B - OWASP ZAP (SIN CAMBIOS)
   # ==========================================
   zap:
     name: 02B - OWASP ZAP en GitHub
-
-    if: >-
-      github.event_name != 'pull_request' &&
-      github.ref == 'refs/heads/main'
-
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: validate
-
     runs-on: ubuntu-latest
     timeout-minutes: 35
 
@@ -243,7 +202,6 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-
           npm ci --prefix la-tarima-back
           npm ci --prefix la-tarima-front
 
